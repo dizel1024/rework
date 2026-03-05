@@ -85,31 +85,33 @@ const Navbar: React.FC = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden absolute top-full left-0 right-0 bg-white border-t p-6 shadow-xl flex flex-col gap-4 overflow-hidden"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="md:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-100 p-6 shadow-2xl flex flex-col gap-2 z-50 overflow-hidden"
           >
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="text-lg font-medium text-black"
+                className="block w-full py-4 text-center text-lg font-bold text-gray-800 hover:bg-gray-50 rounded-xl transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}
               </a>
             ))}
-            <Button
-              variant="primary"
-              className="w-full mt-4"
-              onClick={() => {
-                setIsMobileMenuOpen(false);
-                window.location.href = '#contact';
-              }}
-            >
-              התחילו פרויקט
-            </Button>
+            <div className="pt-4 mt-2 border-t border-gray-100">
+              <Button
+                variant="primary"
+                className="w-full text-lg py-4 rounded-xl shadow-lg shadow-blue-500/20"
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  window.location.href = '#contact';
+                }}
+              >
+                התחילו פרויקט
+              </Button>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

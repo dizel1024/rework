@@ -109,7 +109,7 @@ const Testimonials: React.FC = () => {
         </div>
 
         {/* Row 2 - Right */}
-        <div className="flex overflow-hidden">
+        <div className="hidden md:flex overflow-hidden">
           <div className="animate-marquee-reverse transform-gpu">
             {[...row2, ...row2, ...row2].map((item, idx) => (
               <ReviewCard key={`r2-${item.id}-${idx}`} item={item} />
@@ -118,7 +118,7 @@ const Testimonials: React.FC = () => {
         </div>
 
         {/* Row 3 - Left faster */}
-        <div className="flex overflow-hidden">
+        <div className="hidden md:flex overflow-hidden">
           <div className="animate-marquee-fast transform-gpu">
             {[...row3, ...row3, ...row3].map((item, idx) => (
               <ReviewCard key={`r3-${item.id}-${idx}`} item={item} />

@@ -84,7 +84,7 @@ function App() {
   return (
     <>
       <Preloader />
-      <div className="min-h-screen bg-neutral-50 selection:bg-black selection:text-white">
+      <div className="min-h-screen relative bg-neutral-50 selection:bg-black selection:text-white overflow-x-hidden w-full max-w-[100vw]">
         <Routes>
           <Route path="/" element={<Home isLoading={isLoading} />} />
           <Route path="/packages" element={<Packages />} />
