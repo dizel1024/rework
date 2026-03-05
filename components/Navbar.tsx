@@ -37,12 +37,11 @@ const Navbar: React.FC = () => {
         {/* Logo */}
         <a href="#home" className="flex items-center transition-opacity duration-300 hover:opacity-80">
           <img
-            src="/assets/rework logo.webp"
+            src={isScrolled || isMobileMenuOpen ? "/assets/rework logo Black.webp" : "/assets/rework logo.webp"}
             alt="REWORK"
-            className="h-8 w-auto"
+            className="h-8 w-auto transition-all duration-300"
             style={{
-              filter: isScrolled || isMobileMenuOpen ? 'none' : 'brightness(0) invert(1)',
-              transition: 'filter 0.3s ease'
+              filter: isScrolled || isMobileMenuOpen ? 'none' : 'brightness(0) invert(1)'
             }}
             loading="eager"
             fetchPriority="high"
