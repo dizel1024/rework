@@ -12,6 +12,7 @@ import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import Preloader from './components/Preloader';
 import WhatsAppWidget from './components/WhatsAppWidget';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -79,6 +80,7 @@ function App() {
         </footer>
 
         <WhatsAppWidget />
+        <SpeedInsights />
       </div>
     </>
   );
