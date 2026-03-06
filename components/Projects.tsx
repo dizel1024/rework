@@ -109,7 +109,7 @@ const ProjectCard: React.FC<{ project: Project; isFirst?: boolean }> = ({ projec
 
 const Projects: React.FC = () => {
   return (
-    <section id="projects" className="w-full bg-[#FFFFFF] py-16 px-4 sm:px-8 md:px-12 lg:px-20 font-sans selection:bg-black selection:text-white">
+    <section id="projects" className="w-full bg-[#FFFFFF] pt-6 pb-16 md:py-16 px-4 sm:px-8 md:px-12 lg:px-20 font-sans selection:bg-black selection:text-white">
       <div className="max-w-[1520px] mx-auto flex flex-col gap-[45px]">
 
         {/* Top Header Section */}

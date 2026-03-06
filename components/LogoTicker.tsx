@@ -21,7 +21,7 @@ const logos = [
 
 const LogoTicker: React.FC = () => {
   return (
-    <section className="bg-white py-6 md:py-8 overflow-hidden">
+    <section className="bg-white py-4 md:py-8 overflow-hidden w-full">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center">
           {/* Header Text */}
@@ -32,7 +32,7 @@ const LogoTicker: React.FC = () => {
           </div>
 
           {/* Mobile 2D Marquee */}
-          <div className="md:hidden relative w-screen -mx-4 overflow-hidden mt-4 mb-2 pointer-events-none" dir="ltr">
+          <div className="md:hidden relative w-full overflow-hidden mt-2 mb-0 pointer-events-none" dir="ltr">
             {/* Edges Gradient */}
             <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-white to-transparent z-10" />
             <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-white to-transparent z-10" />

@@ -5,7 +5,7 @@ import { TubesBackground } from './ui/neon-flow';
 
 const Hero: React.FC = () => {
   return (
-    <section className="bg-black text-white min-h-screen flex flex-col relative overflow-hidden rounded-b-[3rem]">
+    <section className="bg-black text-white min-h-[85vh] md:min-h-screen flex flex-col relative overflow-hidden rounded-b-[3rem] w-full">
 
       <TubesBackground className="absolute inset-0 w-full h-full">
         <div className="container mx-auto px-6 h-full flex flex-col justify-between pt-24 pb-12 pointer-events-none">
