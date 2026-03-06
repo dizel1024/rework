@@ -15,6 +15,7 @@ import Preloader from './components/Preloader';
 import WhatsAppWidget from './components/WhatsAppWidget';
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import Packages from './pages/Packages';
+import ProjectsPage from './pages/ProjectsPage';
 
 const Home = ({ isLoading }: { isLoading: boolean }) => (
   <div className={`transition-opacity duration-1000 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
@@ -88,6 +89,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home isLoading={isLoading} />} />
           <Route path="/packages" element={<Packages />} />
+          <Route path="/projects" element={<ProjectsPage />} />
         </Routes>
 
         <WhatsAppWidget />

@@ -9,7 +9,7 @@ interface Project {
   link: string;
 }
 
-const PROJECTS: Project[] = [
+export const PROJECTS: Project[] = [
   {
     id: 'nexalum',
     name: 'Nexalum',
@@ -60,7 +60,7 @@ const PROJECTS: Project[] = [
   }
 ];
 
-const ProjectCard: React.FC<{ project: Project; isFirst?: boolean }> = ({ project, isFirst = false }) => {
+export const ProjectCard: React.FC<{ project: Project; isFirst?: boolean }> = ({ project, isFirst = false }) => {
   return (
     <div className="relative group cursor-pointer bg-white overflow-hidden rounded-[18px]">
       <a
@@ -133,6 +133,17 @@ const Projects: React.FC = () => {
           {PROJECTS.map((project, index) => (
             <ProjectCard key={project.id} project={project} isFirst={index < 2} />
           ))}
+        </div>
+
+        {/* View All Projects Button */}
+        <div className="flex justify-center mt-10">
+          <a
+            href="/projects"
+            className="group flex items-center justify-center gap-2 bg-[#090909] text-white px-8 py-4 rounded-full text-[16px] font-bold tracking-tight hover:bg-[#1a1a1a] transition-all"
+          >
+            <span>לכל הפרויקטים</span>
+            <span className="transform group-hover:-translate-x-1 transition-transform">←</span>
+          </a>
         </div>
 
       </div>
