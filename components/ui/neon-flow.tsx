@@ -66,10 +66,10 @@ export function TubesBackground({
             initTubes();
           }
         }
-        // Toggle visibility to stop GPU draw calls when scrolled past
+        // Set opacity to reduce rendering artifacts instead of hiding the display completely
         if (canvasRef.current) {
-          canvasRef.current.style.visibility = entry.isIntersecting ? 'visible' : 'hidden';
-          canvasRef.current.style.display = entry.isIntersecting ? 'block' : 'none';
+          canvasRef.current.style.opacity = entry.isIntersecting ? '1' : '0';
+          canvasRef.current.style.pointerEvents = entry.isIntersecting ? 'auto' : 'none';
         }
       },
       { threshold: 0.1 }
@@ -103,8 +103,7 @@ export function TubesBackground({
     >
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full block transform-gpu"
-        style={{ touchAction: 'none', willChange: 'transform, opacity' }}
+        className="absolute inset-0 w-full h-full block transform-gpu transition-opacity duration-500"
       />
 
       {/* Content Overlay */}
