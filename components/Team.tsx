@@ -55,7 +55,7 @@ const MemberCard: React.FC<{ member: TeamMember }> = ({ member }) => {
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
+    if (!cardRef.current || window.innerWidth < 768) return;
     const rect = cardRef.current.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;
@@ -90,13 +90,13 @@ const MemberCard: React.FC<{ member: TeamMember }> = ({ member }) => {
         transformStyle: "preserve-3d",
         perspective: "1000px",
       }}
-      className="relative aspect-[4/5] sm:aspect-auto sm:h-[450px] md:h-[500px] bg-white/75 border border-white/90 rounded-[4px] overflow-hidden group cursor-pointer shadow-[0_4px_30px_rgba(0,0,0,0.02),inset_0_0_20px_rgba(255,255,255,0.5)] backdrop-blur-[12px] transition-all duration-500 hover:translate-y-[-10px] hover:shadow-[0_30px_60px_rgba(0,0,0,0.08),inset_0_0_40px_rgba(255,255,255,0.8)] hover:border-white"
+      className="relative aspect-[4/5] sm:aspect-auto sm:h-[450px] md:h-[500px] bg-white/75 border border-white/90 rounded-[4px] overflow-hidden group md:cursor-pointer shadow-[0_4px_30px_rgba(0,0,0,0.02),inset_0_0_20px_rgba(255,255,255,0.5)] backdrop-blur-[12px] transition-all duration-500 md:hover:translate-y-[-10px] md:hover:shadow-[0_30px_60px_rgba(0,0,0,0.08),inset_0_0_40px_rgba(255,255,255,0.8)] md:hover:border-white"
     >
       {/* Porcelain Shimmer Effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-white/20 pointer-events-none z-10" />
 
       {/* Image Wrapper */}
-      <div className="w-full h-full relative filter grayscale contrast-[1.1] group-hover:grayscale-0 group-hover:contrast-100 transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-[1.05]">
+      <div className="w-full h-full relative filter md:grayscale md:contrast-[1.1] md:group-hover:grayscale-0 md:group-hover:contrast-100 transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] md:group-hover:scale-[1.05]">
         <img src={member.src} alt={member.name} className="w-full h-full object-cover object-top" loading="lazy" />
       </div>
 
@@ -109,7 +109,7 @@ const MemberCard: React.FC<{ member: TeamMember }> = ({ member }) => {
           {member.name}
         </h3>
         <motion.p
-          className="text-[0.85rem] leading-relaxed text-neutral-600 max-h-0 opacity-0 group-hover:max-h-[100px] group-hover:opacity-100 group-hover:mt-3 transition-all duration-500 overflow-hidden"
+          className="text-[0.85rem] leading-relaxed text-neutral-600 max-h-[100px] opacity-100 mt-3 md:max-h-0 md:opacity-0 md:group-hover:max-h-[100px] md:group-hover:opacity-100 md:group-hover:mt-3 transition-all duration-500 overflow-hidden"
         >
           {member.bio}
         </motion.p>
