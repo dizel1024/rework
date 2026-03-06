@@ -19,10 +19,6 @@ import ProjectsPage from './pages/ProjectsPage';
 
 const Home = ({ isLoading }: { isLoading: boolean }) => (
   <div className={`transition-opacity duration-1000 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
-    <header>
-      <Navbar />
-    </header>
-
     <main>
       <section id="home" aria-label="Hero Section">
         <Hero />
@@ -86,6 +82,7 @@ function App() {
     <>
       <Preloader />
       <div className="min-h-screen relative bg-neutral-50 selection:bg-black selection:text-white overflow-x-hidden w-full max-w-[100vw]">
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home isLoading={isLoading} />} />
           <Route path="/packages" element={<Packages />} />

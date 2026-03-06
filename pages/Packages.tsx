@@ -10,35 +10,7 @@ const Packages: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-[#fafafa]" dir="ltr">
-            {/* Header */}
-            <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 py-4">
-                <div className="container mx-auto px-6 max-w-7xl flex justify-between items-center">
-                    <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
-                        <img src="/assets/rework logo Black.webp" alt="REWORK" className="h-8 w-auto" />
-                    </a>
-
-                    <div className="flex items-center gap-6" dir="rtl">
-                        <a
-                            href="https://wa.me/972556775456"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hidden md:flex items-center gap-2 text-sm font-bold text-gray-500 hover:text-black transition-colors"
-                        >
-                            <MessageCircle size={18} className="text-gray-400" />
-                            <span>055-6775456</span>
-                        </a>
-
-                        <a
-                            href="/"
-                            className="flex items-center gap-2 bg-black text-white px-5 py-2.5 rounded-2xl text-sm font-bold hover:bg-gray-800 transition-all"
-                        >
-                            <ArrowLeft size={16} />
-                            <span>חזרה לאתר</span>
-                        </a>
-                    </div>
-                </div>
-            </header>
-
+            {/* Main Content */}
             <main>
                 <PricingSection />
             </main>
