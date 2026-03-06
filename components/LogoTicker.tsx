@@ -21,18 +21,18 @@ const logos = [
 
 const LogoTicker: React.FC = () => {
   return (
-    <section className="bg-white py-12 md:py-16 overflow-hidden">
+    <section className="bg-white py-6 md:py-8 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center">
           {/* Header Text */}
-          <div className="mb-10 text-center">
+          <div className="mb-4 text-center">
             <span className="text-black text-lg md:text-xl font-bold tracking-tight">
               יוצרים נוכחות דיגיטלית למותגים, עסקים ואנשי מקצוע
             </span>
           </div>
 
           {/* Mobile 2D Marquee */}
-          <div className="md:hidden relative w-screen -mx-4 overflow-hidden mt-8 mb-4 pointer-events-none" dir="ltr">
+          <div className="md:hidden relative w-screen -mx-4 overflow-hidden mt-4 mb-2 pointer-events-none" dir="ltr">
             {/* Edges Gradient */}
             <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-white to-transparent z-10" />
             <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-white to-transparent z-10" />
@@ -52,7 +52,7 @@ const LogoTicker: React.FC = () => {
           </div>
 
           {/* Desktop 3D Circular Stage */}
-          <div className="hidden md:flex relative w-full h-[300px] items-center justify-center [perspective:2000px] pointer-events-none">
+          <div className="hidden md:flex relative w-full h-[180px] items-center justify-center [perspective:2000px] pointer-events-none">
 
             {/* The Rotating Ring */}
             <motion.div
